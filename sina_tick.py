@@ -17,7 +17,7 @@ class SinaTick:
         page = requests.get(url, headers=headers)
         stock_info = page.text
         stock_data = stock_info[13:-3].replace('="', ',').split(',')
-        return tick_data
+        return stock_data
 
     def get_opti(self):
         # 取股指期权当前数据
@@ -34,5 +34,5 @@ class SinaTick:
         headers = {'referer': 'https://finance.sina.com.cn/'}
         page = requests.get(url, headers=headers)
         etf_option_info = page.text
-        etf_opti_data = option_info[13:-3].replace('="', ',').split(',')
+        etf_opti_data = etf_option_info[13:-3].replace('="', ',').split(',')
         return etf_opti_data
