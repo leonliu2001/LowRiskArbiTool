@@ -38,4 +38,5 @@ def cbond_price_mon():
                 send_msg.send_wechat()
 
 
-cbond_price_mon()
+if __name__ == "__main__":
+    cbond_price_mon()
