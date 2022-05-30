@@ -4,4 +4,5 @@
 编程语言选用python3.7.0，数据库选用了mysql5.7.32，图形界面采用tkinter，ORM采用peewee
 sina_tick实现了从新浪财经接口提取股票、期货期权、etf期权的实时成交数据。
 ttjj_data实现了从天天基金网接口提取lof基金的实时估算值。
-send_wechat使用163邮箱（开启smtp功能）向qq邮箱发送邮件，在微信端开启qq邮箱提醒功能，实现重要消息提醒（延时约10秒）
+send_wechat使用163邮箱（开启smtp功能）向qq邮箱发送邮件，在微信端开启qq邮箱提醒功能，实现重要消息提醒（延时约10秒)
+diff_lof_price实现比较lof现价和估算值之间的折溢价
