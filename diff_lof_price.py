@@ -7,12 +7,11 @@ Created on Tue Apr 26 16:12:55 2022
 
 
 import pandas as pd
-import time
 from sina_tick import SinaTick
 from ttjj_data import TtjjData
 
-def diff_lof_price():
 
+def diff_lof_price():
     lof_codes = pd.read_csv('./json/lof.csv', header=None, index_col=0, squeeze=True).to_dict()
     # 从csv文件读取lof的代码和名称
     lof_keys = list(lof_codes.keys())  # 取代码为List
@@ -25,10 +24,9 @@ def diff_lof_price():
         lof_esti_values = TtjjData(str(lof_key))
         lof_esti_value = lof_esti_values.get_nv()
         print("估值", lof_esti_value.get('gsz'))
-        print("折溢价",(float(lof_tick[4])- float(lof_esti_value.get('gsz')))/(float(lof_tick[4])))
+        print("折溢价", (float(lof_tick[4]) - float(lof_esti_value.get('gsz')))/(float(lof_tick[4])))
         # 折溢价为百分比值
 
 
 if __name__ == "__main__":
     diff_lof_price()
-
