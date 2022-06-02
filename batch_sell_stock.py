@@ -14,7 +14,7 @@ from THS.THSTrader import THSTrader
 
 def batch_sell_stock():
 
-    stock_codes = pd.read_csv('./json/selllist.csv', header=None, index_col=0, squeeze=True).to_dict()
+    stock_codes = pd.read_csv('./json/cbold.csv', header=None, index_col=0, squeeze=True).to_dict()
     # 从csv文件读取转债的代码和名称
     stock_keys = list(cbond_codes.keys())  # 取代码为List
     for stock_key in stock_keys:
