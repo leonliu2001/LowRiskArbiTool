@@ -34,7 +34,7 @@ def batch_sell_stock():
             stock_tick_sz = stock_ticks_sz.get_stock()
             sell_price_sz = float(stock_tick_sz[3])+3
             print(stock_tick_sz[3])
-            trader_sz = THSTrader(r"C:\同花顺\xiadan.exe")  # 连接同花顺下单的客户端
+            trader_sz = THSTrader(r"C:\同花顺\xiadan.exe")  # 连接同花顺下单的客户端，调用Tu5039的THS库
             result_sz = trader_sz.sell(stock_no=stock_key, amount=20, price=str(sell_price_sz))
             print(result_sz)
             time.sleep(5)
