@@ -10,6 +10,7 @@ import pandas as pd
 
 
 class BaostockData:
+    #  从baostock获取股票的历史数据
     def __init__(self, code_no: str, start_date: str, end_date: str):
         self.code_no = code_no
         self.start_date = start_date
@@ -37,13 +38,7 @@ class BaostockData:
             data_list.append(rs.get_row_data())
         result = pd.DataFrame(data_list, columns=rs.fields)
         result.to_csv('./json/history_A_stock_k_data.csv', index=False)
-        # 结果集输出到csv文件,此处保存到c:\load目录下
+        # 结果集输出到csv文件
         bs.logout()
         # 登出系统
         return result
-
-if __name__ == "__main__":
-    bt = BaostockData("sh.601166","2021-06-01","2022-06-01")
-    cvs = bt.get_bao_data()
-    print(type(cvs))
-    print(cvs)
