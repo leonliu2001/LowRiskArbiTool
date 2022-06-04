@@ -2,7 +2,7 @@ import numpy as np
 import math
 from bao_data import BaostockData
 
-# 以601166为例，计算波动率，时间选择2021-5-31到2022-5-31
+# 以601166为例，计算股票的年化波动率，时间选择2021-5-31到2022-5-31
 
 n = 242
 # 计算n天波动率，需要n+1天数据，按一年243个交易日, 日期需要要间隔1整年
@@ -12,9 +12,7 @@ history_data = bt.get_bao_data()
 diff_ln_total = []
 for i in range(n):
     yestoday_close = history_data.iloc[i - n - 1].close
-    print(yestoday_close)
     today_close = history_data.iloc[i - n].close
-    print(today_close)
     # 计算对数
     ln_yestoday_close = math.log(float(yestoday_close), math.e)
     ln_today_close = math.log(float(today_close), math.e)
