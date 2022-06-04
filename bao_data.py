@@ -38,7 +38,7 @@ class BaostockData:
             data_list.append(rs.get_row_data())
         result = pd.DataFrame(data_list, columns=rs.fields)
         result.to_csv('./json/history_A_stock_k_data.csv', index=False)
-        # 结果集输出到csv文件
+        # 可以将结果集输出到csv文件
         bs.logout()
         # 登出系统
         return result
