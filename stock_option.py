@@ -47,14 +47,3 @@ class StockOption:
         p = self.K*exp(-self.r*self.t)*norm.cdf(-d2)-self.S*norm.cdf(-d1)
         return p
 
-
-if __name__ == "__main__":
-    s = StockOption(100, 110, 0.025, 0.22, 1, 10000)
-    c1 = s.call_bsm()
-    c2 = s.call_montecarlo()
-    c4 = s.put_bsm()
-    c5 = s.put_montecarlo()
-    print(c1)
-    print(c2)
-    print(c4)
-    print(c5)
