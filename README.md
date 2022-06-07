@@ -8,3 +8,4 @@ bao_data实现了从baostock提取股票的历史数据
 send_wechat使用163邮箱（开启smtp功能）向qq邮箱发送邮件，在微信端开启qq邮箱提醒功能，实现重要消息提醒（延时约10秒)
 diff_lof_price实现比较lof现价和估算值之间的折溢价
 calc_stock_volitality实现了对股票年化波动率的计算
+stock_option实现用蒙特卡洛、bsm方式对股票的期权定价进行计算
