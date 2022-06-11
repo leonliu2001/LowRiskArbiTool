@@ -3,7 +3,7 @@
 Created on Sun Apr 24 11:24:57 2022
 @author: Administrator
 """
-# 从新浪财经接口提取股票、转债（视同股票）、股指期权、etf期权的实时数据，返回值为list。
+# 从新浪财经接口提取股票、转债（视同股票）、商品期货、股指期权、etf期权的实时数据，返回值为list。
 import requests
 
 
