@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr 26 16:12:55 2022
+
+@author: Leonliu2001
+"""
+import datetime
+
+import pandas as pd
+import time
+from sina_tick import SinaTick
+from send_wechat import SendWechat
+
+
+def diff_index_future():
+
+    index_code = "sh000905"
+
+    index_tick = SinaTick(index_code)
+    index_price = index_tick.get_stock()
+
+    print("中证500指数现价", index_price[4])
+
+    future_code = "IC2207"
+    future_tick = SinaTick(future_code)
+    future_price = future_tick.get_cff_future()
+    print("IC2207期货合约现价", future_price[4])
+    print("贴水率为", (float(index_price[4]) - float(future_price[4]))/(float(index_price[4])))
+    print("年化贴水率为", ((float(index_price[4]) - float(future_price[4])) / (float(index_price[4])))*365/34)
