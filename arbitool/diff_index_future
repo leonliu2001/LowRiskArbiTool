@@ -10,8 +10,6 @@ def diff_index_future():
     # 从csv文件读取future的代码和名称
     future_codes = list(future_dict.keys())
     # 取期货代码，类型为List
-    settlement_days = list(future_dict.values())
-    # 取交割日期，类型为List
     today = datetime.now()
     # 取当天日期
     index_code = "sh000905"
