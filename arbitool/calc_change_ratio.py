@@ -6,7 +6,7 @@ csv_data = pd.read_csv(csv_file, low_memory=False, converters={'stcode': str})
 csv_df = pd.DataFrame(csv_data)
 
 stock_keys = list(csv_df['cbcode'])
-m = len(csv_df.index)
+m = len(csv_df.index) # m为转债对照表的行数
 n = 0
 while n < m:
     CbondCode = csv_df.loc[n, 'cbcode']
