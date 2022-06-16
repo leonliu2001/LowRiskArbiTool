@@ -8,6 +8,6 @@ bao_data类实现了从baostock提取股票的历史数据。<br>
 stock_option类实现用蒙特卡洛、bsm方式对股票的期权定价进行计算。<br>
 send_wechat使用163邮箱（开启smtp功能）向qq邮箱发送邮件，在微信端开启qq邮箱提醒功能，实现重要消息提醒（延时约10秒)。<br>
 diff_lof_price实现比较lof现价和估算值之间的折溢价。<br>
-calc_stock_volitality实现了对股票年化波动率的计算。<br>
+calc_stock_volitality实现了对股票年化波动率的计算，历史数据取自baostock。<br>
 diff_index_future实现了比较中证500指数和IC期货，计算IC期货的贴水率。<br>
 calc_change_ratio实现了计算可转债转股后价格和正股价格的折溢价率。<br>
