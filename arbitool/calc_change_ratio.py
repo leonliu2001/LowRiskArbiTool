@@ -13,22 +13,22 @@ while n < m:
     StockCode = csv_df.loc[n, 'stcode']
     ChangePrice = csv_df.loc[n, 'cprice']
 
-    if str(CbondCode).startswith('11'):  # 挑选上海交易所的股票
+    if str(CbondCode).startswith('11'):  # 挑选上海交易所的转债
         print("转债代码", str(CbondCode))
         CbondCodeSh = 'sh' + str(CbondCode)  # 增加sh标识
         CbondTicksSh = SinaTick(CbondCodeSh)
-        CbondTickSh = CbondTicksSh.get_stock()  # 抽取股票当前价格
+        CbondTickSh = CbondTicksSh.get_stock()  # 抽取转债当前价格
         print("转债现价", CbondTickSh[4])
         cp = float(CbondTickSh[4])
 
-        if str(StockCode).startswith('60'):
+        if str(StockCode).startswith('60'): # 挑选上海交易所的股票
             print("股票代码", str(StockCode))
             StockCodeSh = 'sh' + str(StockCode)  # 增加sh标识
             StockTicksSh = SinaTick(StockCodeSh)
             StockTickSh = StockTicksSh.get_stock()  # 抽取股票当前价格
             print("股票现价", StockTickSh[4])
             sp = float(StockTickSh[4])
-            Discount = (cp - ((100 / float(ChangePrice)) * sp)) / (sp * (100 / float(ChangePrice)))
+            Discount = (cp - ((100 / float(ChangePrice)) * sp)) / (sp * (100 / float(ChangePrice)))  # 计算折溢价
             print("折溢价为：", Discount)
 
     if str(CbondCode).startswith('12'):  # 挑选深圳交易所的转债
@@ -43,10 +43,10 @@ while n < m:
             print("股票代码", str(StockCode))
             StockCodeSz = 'sz' + str(StockCode)  # 增加sz标识
             StockTicksSz = SinaTick(StockCodeSz)
-            StockCodeSz = StockTicksSz.get_stock()
+            StockCodeSz = StockTicksSz.get_stock() # 抽取股票当前价格
             print("股票现价", StockCodeSz[4])
             sp = float(StockCodeSz[4])
-            Discount = (cp - ((100 / float(ChangePrice)) * sp)) / (sp * (100 / float(ChangePrice)))
+            Discount = (cp - ((100 / float(ChangePrice)) * sp)) / (sp * (100 / float(ChangePrice))) # 计算折溢价
             print("折溢价为：", Discount)
 
     n = n+1
