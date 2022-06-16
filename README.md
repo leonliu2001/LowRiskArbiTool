@@ -10,3 +10,4 @@ send_wechat使用163邮箱（开启smtp功能）向qq邮箱发送邮件，在微
 diff_lof_price实现比较lof现价和估算值之间的折溢价。<br>
 calc_stock_volitality实现了对股票年化波动率的计算。<br>
 diff_index_future实现了比较中证500指数和IC期货，计算IC期货的贴水率。<br>
+calc_change_ratio实现了计算可转债转股后价格和正股价格的折溢价率。<br>
