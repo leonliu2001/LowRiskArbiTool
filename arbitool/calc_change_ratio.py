@@ -21,10 +21,11 @@ while n < m:
             StockTicksSh = SinaTick(StockCodeSh)
             StockTickSh = StockTicksSh.get_stock()  # 抽取股票当前价格
             sp = float(StockTickSh[4])
-            Discount = (cp - ((100 / float(ChangePrice)) * sp)) / (sp * (100 / float(ChangePrice)))
-            if Discount < 0.02: # 仅输出折溢价率小于2%的转债
-                print("转债代码", str(CbondCode), "转债现价", CbondTickSh[4], "股票代码", str(StockCode), "股票现价", StockTickSh[4])
-                print("折溢价为：", Discount)
+            if sp != 0:
+                Discount = (cp - ((100 / float(ChangePrice)) * sp)) / (sp * (100 / float(ChangePrice)))
+                if Discount < 0.02:
+                    print("转债代码", str(CbondCode), "转债现价", CbondTickSh[4], "股票代码", str(StockCode), "股票现价", StockTickSh[4])
+                    print("折溢价为：", Discount)
 
     if str(CbondCode).startswith('12'):  # 挑选深圳交易所的转债
         CbondCodeSz = 'sz' + str(CbondCode)  # 增加sz标识
@@ -36,9 +37,10 @@ while n < m:
             StockTicksSz = SinaTick(StockCodeSz)
             StockCodeSz = StockTicksSz.get_stock()
             sp = float(StockCodeSz[4])
-            Discount = (cp - ((100 / float(ChangePrice)) * sp)) / (sp * (100 / float(ChangePrice)))
-            if Discount < 0.02: # 仅输出折溢价率小于2%的转债
-                print("转债代码", str(CbondCode), "转债现价", CbondTickSz[4], "股票代码", str(StockCode), "股票现价", StockCodeSz[4] )
-                print("折溢价为：", Discount)
+            if sp != 0:
+                Discount = (cp - ((100 / float(ChangePrice)) * sp)) / (sp * (100 / float(ChangePrice)))
+                if Discount < 0.02:
+                    print("转债代码", str(CbondCode), "转债现价", CbondTickSz[4], "股票代码", str(StockCode), "股票现价", StockCodeSz[4] )
+                    print("折溢价为：", Discount)
 
     n = n+1
