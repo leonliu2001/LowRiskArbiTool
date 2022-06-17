@@ -4,7 +4,6 @@ from sina_tick import SinaTick
 csv_file = './json/cbondlist.csv'
 csv_data = pd.read_csv(csv_file, low_memory=False, converters={'stcode': str})
 csv_df = pd.DataFrame(csv_data)
-stock_keys = list(csv_df['cbcode'])
 m = len(csv_df.index)
 n = 0
 while n < m:
