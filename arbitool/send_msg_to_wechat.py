@@ -12,7 +12,7 @@ from send_wechat import SendWechat
 
 
 def cbond_price_mon():
-    cbond_codes = pd.read_csv('./json/cbond.csv', header=None, index_col=0, squeeze=True).to_dict()
+    cbond_codes = pd.read_csv('../csv/cbond.csv', header=None, index_col=0, squeeze=True).to_dict()
     # 从csv文件读取转债的代码和名称，cbond.csv格式见文件
     cbond_keys = list(cbond_codes.keys())  # 取代码为List
     mon_ratio = 0.05  # 监控的阈值，可根据需要调整阈值
