@@ -12,7 +12,7 @@ from ttjj_data import TtjjData
 
 
 def diff_lof_price():
-    lof_codes = pd.read_csv('./json/lof.csv', header=None, index_col=0, squeeze=True).to_dict()
+    lof_codes = pd.read_csv('../csv/lof.csv', header=None, index_col=0, squeeze=True).to_dict()
     # 从csv文件读取lof的代码和名称
     lof_keys = list(lof_codes.keys())  # 取代码为List
     for lof_key in lof_keys:
