@@ -1,7 +1,7 @@
 import pandas as pd
 from sina_tick import SinaTick
 
-csv_file = '../csv/cbondlist.csv'
+csv_file = '../csv/cbond_stock.csv'
 csv_data = pd.read_csv(csv_file, low_memory=False, converters={'stcode': str})
 csv_df = pd.DataFrame(csv_data)
 m = len(csv_df.index)
