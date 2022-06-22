@@ -57,3 +57,30 @@ class SinaTick:
         etf_option_info = page.text
         etf_opti_data = etf_option_info[13:-3].replace('="', ',').split(',')
         return etf_opti_data
+    
+    def get_fund_nv(self):
+        url = "https://stock.finance.sina.com.cn/fundInfo/api/openapi.php/CaihuiFundInfoService.getNav?symbol=" + self.code_no
+        data = []
+        # get netvalue of 511880 from sina
+        html = requests.get(url).content
+        # detect html code pattern
+        encode_type = chardet.detect(html)
+        html = html.decode(encode_type['encoding'])
+        # divide string to List
+        data = data + re.findall(u'\{"fbrq.*?"\}', html)
+        # Transform Data to pandas
+        Time = [''] * len(data)
+        JJJZ = [''] * len(data)
+        LJJZ = [''] * len(data)
+        for k in range(len(data)):
+            dataArray = data[k].split('"')
+            Time[k] = pd.to_datetime(dataArray[3][0:10])
+            JJJZ[k] = float(dataArray[7][0:10])
+            LJJZ[k] = float(dataArray[11][0:10])
+        df = pd.DataFrame({'Time': Time,
+                           'JJJZ': JJJZ,
+                           'LJJZ': LJJZ})
+        df = df.drop_duplicates()
+        df = df.sort_values(by='Time')
+        df.index = range(len(df))
+        return df
