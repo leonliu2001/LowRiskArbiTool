@@ -18,5 +18,3 @@ def diff_lof_nav():
         print("折溢价为：", (float(lof_tick[4]) - float(lof_esti_value.get('gsz')))/(float(lof_tick[4])))
         print("")
 
-if __name__ == "__main__":
-    diff_lof_nav()
