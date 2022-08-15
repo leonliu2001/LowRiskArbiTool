@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Apr 24 11:24:57 2022
+@author: Administrator
+"""
+# 从腾讯接口提取股票的实时数据，返回值为dict，代码借鉴了shidenggui老师的项目。
 import requests
 
 
