@@ -6,6 +6,7 @@ main/menu_window为tkinter图形界面，将相关工具图形化，截至8月2�
 data/sina_tick类实现了从新浪财经接口提取股票、期货期权、商品期货、etf期权的实时成交数据，以及提取基金的每日净值数据。<br>
 data/ttjj_data类实现了从天天基金网接口提取lof基金的实时估算值。<br>
 data/bao_data类实现了从baostock提取股票的历史数据。<br>
+data/tencent_data类实现了从腾讯接口提取股票的实时数据。<br>
 tool/stock_option类实现用蒙特卡洛、bsm方式对股票的期权定价进行计算。<br>
 tool/send_wechat使用163邮箱（开启smtp功能）向qq邮箱发送邮件，在微信端开启qq邮箱提醒功能，实现重要消息提醒（实测延时约10秒)。<br>
 tool/diff_lof_price实现比较lof现价和估算值之间的折溢价。<br>
