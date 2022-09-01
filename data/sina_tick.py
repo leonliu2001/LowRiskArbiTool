@@ -51,7 +51,7 @@ class SinaTick:
 
     def get_etf_opti(self):
         # 取etf期权当前数据，代码格式如10003707，为上交所公布的合约编号
-        url = "http://hq.sinajs.cn/list=" + self.code_no
+        url = "http://hq.sinajs.cn/list=CON_SO_" + self.code_no
         headers = {'referer': 'https://finance.sina.com.cn/'}
         page = requests.get(url, headers=headers)
         etf_option_info = page.text
