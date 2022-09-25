@@ -1,0 +1,33 @@
+from datetime import datetime
+import pandas as pd
+from data.sina_tick import SinaTick
+
+def diff_etf_option500sh():
+    option_df = pd.read_csv('../csv/etfoption_500sh.csv', low_memory = False)
+    # 从csv文件读取future的代码和名称
+    today = datetime.now()
+    # 取当天日期
+    i = 0
+    while(i<5):
+        sc = SinaTick(str(option_df.values[i, 0]))
+        print("购权",option_df.values[i, 0],sc.get_etf_opti()[15])
+        sp = SinaTick(str(option_df.values[i, 1]))
+        print("沽权",option_df.values[i, 1],sp.get_etf_opti()[15])
+        strike_price = sc.get_etf_opti()[1][10:14]
+        # 取期权标定值
+        complex_call = float((sc.get_etf_opti()[15])) - float(sp.get_etf_opti()[15]) + (float(strike_price)/1000)
+        print("期权合成折算指数" , complex_call)
+        index_code = "sh510500"
+        index_tick = SinaTick(index_code)
+        index_price = index_tick.get_stock()
+        settlement_day = datetime.strptime(str(option_df.values[i, 2]), '%Y%m%d')
+        day_count = (settlement_day - today).days + 1
+        print("中证500etf现价：", index_price[4], "到期天数：", day_count)
+        print("贴水为：", (float(index_price[4]) - complex_call), "年化贴水率为：", ((float(index_price[4]) -
+                                                                         complex_call)/ (float(index_price[4]))*365/(day_count*1.2)))
+        print("")
+        i=i+1
+
+
+if __name__ == "__main__":
+    diff_etf_option500sh()
