@@ -13,3 +13,4 @@ tool/diff_lof_price实现比较lof现价和估算值之间的折溢价。<br>
 tool/calc_stock_volitality实现了对股票年化波动率的计算，历史数据取自baostock。<br>
 tool/diff_index_future实现了比较中证500指数和IC期货，计算IC期货的贴水率。<br>
 tool/calc_change_ratio实现了计算可转债转股后价格和正股价格的折溢价率。<br>
+tool/diff_etf_option500sh实现计算500etf和上证所500期权合成后的折溢价率。<br>
