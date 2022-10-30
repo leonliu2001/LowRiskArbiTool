@@ -14,4 +14,4 @@ tool/calc_stock_volitality实现了对股票年化波动率的计算，历史数
 tool/diff_index_future实现了比较中证500指数和IC期货，计算IC期货的贴水率。<br>
 tool/calc_change_ratio实现了计算可转债转股后价格和正股价格的折溢价率。<br>
 tool/diff_etf_option500sh实现计算500etf和上证所500期权合成后的折溢价率。<br>
-tool/diff_index_option_io实现计算hs300和中期权合成后的折溢价率。<br>
+tool/diff_index_option_io实现计算hs300和中金期权合成后的折溢价率。<br>
