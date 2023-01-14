@@ -2,7 +2,7 @@
 #  -*- coding: utf-8 -*-                                                                                
 from tqsdk import TqApi, TqAuth                                                                         
                                                                                                         
-#从天勤获取期货实时数据，需要安装tqsdk                                                                                                    
+#从天勤获取期货实时数据，需要安装tqsdk和注册信易账号                                                                                                   
 class TqTick:                                                                                           
     def __init__(self, code_no: str):                                                                   
         self.code_no = code_no                                                                          
